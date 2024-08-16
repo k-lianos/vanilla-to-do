@@ -3,15 +3,22 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "engines": {
+    "node": "20.16.0"
+  },
   "scripts": {
-    "test": "jest",
+    "start": "vite serve",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
     "prettier:format": "prettier --write \"{,to-do-list/**/}*.{md,json,yml,html,js,css,scss}\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^29.7.0",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "vite": "^5.4.1",
+    "vitest": "^2.0.5"
   }
 }
