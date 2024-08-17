@@ -1,4 +1,5 @@
-import { LocalStorage, ToDoListFacade } from './to-do-list/index.js';
+import { LocalStorage, ToDoListFacade } from './libs/to-do-list/index.js';
+import { TemplateInterpolation } from './libs/template-interpolation/index.js';
 
 const DOM = { todoList: null, addBtn: null, todoInput: null };
 
@@ -19,10 +20,14 @@ const onDeleteBtnClick = event => {
 
 const render = items => {
   DOM.todoList.innerHTML = '';
+
+  const template = `{{text}} <button data-btn-type="delete" class="delete-btn">Delete</button>`;
+
   items.forEach(item => {
     const listItem = document.createElement('li');
+    listItem.id = item.id;
     listItem.className = 'todo-item';
-    listItem.innerHTML = `${item.text} <button data-btn-type="delete" class="delete-btn">Delete</button>`;
+    listItem.innerHTML = TemplateInterpolation.interpolate(template, { text: item.text });
     listItem.dataset.identifier = item.id;
     DOM.todoList.appendChild(listItem);
   });

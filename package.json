@@ -11,12 +11,13 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "prettier:format": "prettier --write \"{,to-do-list/**/}*.{md,json,yml,html,js,css,scss}\""
+    "prettier:format": "prettier --write \"{,libs/**/}*.{md,json,yml,html,js,css,scss}\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vitest/coverage-v8": "^2.0.5",
     "prettier": "^3.3.3",
     "vite": "^5.4.1",
     "vitest": "^2.0.5"
